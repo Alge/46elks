@@ -1,0 +1,1074 @@
+{
+    "id": "e272eaa14d5fc6f049cbe5348cb95c69",
+    "name": "46elks API",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "4a85ed0389cff807aaa40ec9066f1806",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/me",
+            "description": "Get your account data",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "02ebab17c05bf422384113fea9d30616",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/me",
+            "description": "Set level for when credit alert e-mail to be sent",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "creditalert",
+                    "description": "Alert credits level",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "094b56109395267b7eafbbde54ae9bba",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/subaccounts",
+            "description": "Get all subaccounts",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "407cf847469d3a2d0df8ba1e0d97e678",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/subaccounts",
+            "description": "Create new subaccount.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "name",
+                    "description": "Name of subaccount",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "usagelimit",
+                    "description": "The usage limit for the subaccount.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "6b313957d49aaafb280e75ff8f8c3eba",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/subaccounts\/{id}",
+            "description": "Get the data about one subaccount.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Id of the subaccount",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "c1b10c455567beb77d3ac81bb14b37f1",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/subaccounts\/{id}",
+            "description": "Update subaccount.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Id of the subaccount",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "name",
+                    "description": "Name of subaccount",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "usagelimit",
+                    "description": "The usage limit for the subaccount.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "3b6c717cbd247afcdea1ffc3a99da5a9",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/images",
+            "description": "Get image list",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "start",
+                    "description": "Show images older than this date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "end",
+                    "description": "Show images newer than this date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "a87c981ceb183e0519602280a060fcc8",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/images\/{id}",
+            "description": "Get metadata of one image.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Id of the subaccount",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "3479ba3e36df077cd7d64571ba537861",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/images\/{id}.jpg",
+            "description": "Get image file",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Id of the subaccount",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "583d3d95ad933e3e7386cbb98170432e",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/recordings",
+            "description": "Get list of recordings",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "start",
+                    "description": "Show images older than this date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "end",
+                    "description": "Show images newer than this date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "926de74582351a33c0bb1249e4fbb639",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/recordings\/{id}",
+            "description": "Get metadata of one recording.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Id of the subaccount",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "87df16d6022c1436448209417d239ff3",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/recordings\/{id}.wav",
+            "description": "Get recodring soundfile.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Id of the subaccount",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "eefe287bf1a4c8e49eb26abbe2a969cd",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/numbers",
+            "description": "Get all numbers allocated in the API",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "ec41ba851896af2736482770de615276",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/numbers",
+            "description": "Allocate new number for usage in the API.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "country",
+                    "description": "country",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "capabilities",
+                    "description": "SMS, MMS, Voice",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sms_url",
+                    "description": "Url where to send incomming sms. Set to \"none\" to clear.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "mms_url",
+                    "description": "Url where to send incomming MMS. Set to \"none\" to clear.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "voice_start",
+                    "description": "Url \/ JSON where to send incomming calls. Set to \"none\" to clear.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sms_replies",
+                    "description": "Prevent automatic response from callback server.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "32dca0573debea487c5a3db84f1f7874",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/numbers\/{id}",
+            "description": "Get information about one number.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Id of the subaccount",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "884c8d4af6215128c11ab5752550e976",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/numbers\/{id}",
+            "description": "Change parameters of number",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Id of the subaccount",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sms_url",
+                    "description": "Url where to send incomming sms. Set to \"none\" to clear.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "voice_start",
+                    "description": "Url \/ JSON where to send incomming calls. Set to \"none\" to clear.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "mms_url",
+                    "description": "Url where to send incomming MMS. Set to \"none\" to clear.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sms_replies",
+                    "description": "Prevent automatic response from callback server.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "active",
+                    "description": "Prevent automatic response from callback server.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "6ad2098d178e9782d9dd051b07e4b04d",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/Calls",
+            "description": "Start Phonecall",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "from",
+                    "description": "Your 46elks umber like +46766861647.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "to",
+                    "description": "Number in e164 number like +46723175800.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "voice_start",
+                    "description": "Url \/ JSON where to send incomming calls. Set to \"none\" to clear.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "whenhangup",
+                    "description": "Url to send call data to when call ends.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "timeout",
+                    "description": "Secounds to wait before stopping call.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "b27d976cafc93036b481c0ccbf72783a",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/Calls",
+            "description": "List latest 100 Calls",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "start",
+                    "description": "Show images older than this date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "end",
+                    "description": "Show images newer than this date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "58aaa53f08fdbf240f56ef6d97beecc0",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/Calls\/{id}",
+            "description": "Delete Call from history",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Id of the subaccount",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "b859a5d41d2f95f777814b672bf3e55c",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/Calls\/{id}",
+            "description": "Get one Call.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Id of the subaccount",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "2c2fed6fd62bbef1dec3d6fa00627179",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/SMS",
+            "description": "Send SMS",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "from",
+                    "description": "Your 46elks umber like +46766861647.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "to",
+                    "description": "Number in e164 number like +46723175800.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "message",
+                    "description": "Text to send to the phone.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "whendelivered",
+                    "description": "Url to send the Delivery report to",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "flashsms",
+                    "description": "Do not store message on the phone.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "dryrun",
+                    "description": "Do not send the message, get price estimation and verify parameters.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "dontlog",
+                    "description": "Do not store data about SMS in the API platform, set to \"message\" to hide message content.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "f3a0674f4265386dbedc8a9a090a6a8f",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/SMS",
+            "description": "List latest 100 SMS",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "start",
+                    "description": "Show images older than this date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "end",
+                    "description": "Show images newer than this date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "202bd3aa8f95d49bc8384efb31a2e029",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/SMS\/{id}",
+            "description": "Delete SMS",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Id of the subaccount",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "3b33eadbee33a540f5a2687ef9fd75cb",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/SMS\/{id}",
+            "description": "Get one SMS.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Id of the subaccount",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "b9f06c647ecbc8d4a40bb2bcd7f3f00b",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/MMS",
+            "description": "Send MMS",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "from",
+                    "description": "Your 46elks umber like +46766861647.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "to",
+                    "description": "Number in e164 number like +46723175800.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "message",
+                    "description": "Text to send to the phone.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "image",
+                    "description": "Url or Base64\/url-encoded imagedata to send.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "5825bdc8dd288da3bc5ef4d71c4bd4e3",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/MMS",
+            "description": "List latest 100 MMS",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "start",
+                    "description": "Show images older than this date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "end",
+                    "description": "Show images newer than this date.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "8338e163c4a528daf142875089a0f9e9",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/MMS\/{id}",
+            "description": "Delete MMS",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Id of the subaccount",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        },
+        {
+            "id": "0731e273820af4cff1ba6e7ac568c665",
+            "name": "",
+            "url": "http:\/\/api.46elks.com\/a1\/MMS\/{id}",
+            "description": "Get one MMS.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "Id of the subaccount",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "e272eaa14d5fc6f049cbe5348cb95c69",
+            "rawModeData": ""
+        }
+    ]
+}
