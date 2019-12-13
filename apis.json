@@ -1,0 +1,110 @@
+{
+    "name": "46elks",
+    "description": "Adding SMS and Voice to your application or service should be easy. Phone calls, SMS & MMS in one easy API. For developers, built by developers.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/289-46elks.jpg",
+    "tags": [
+        "api provider",
+        "automated phone calls",
+        "have api",
+        "have swagger",
+        "messages",
+        "new",
+        "number allocation",
+        "telecommunications"
+    ],
+    "created": "2019-12-12",
+    "modified": "2019-12-12",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/46elks\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "46elks API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/289-46elks.jpg",
+            "humanURL": "http:\/\/www.46elks.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/46elks-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/46elks-api-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "API.json - Authoritative",
+            "url": "http:\/\/pi.thure.org\/apis.json"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/www.46elks.com"
+        },
+        {
+            "type": "Blog",
+            "url": "http:\/\/46elks.com\/blog\/"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/feeds.feedburner.com\/46elksBlog"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/46elks"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/46elks"
+        },
+        {
+            "type": "Email",
+            "url": "apipassword@api.46elks.com"
+        },
+        {
+            "type": "Email",
+            "url": "help@46elks.com"
+        },
+        {
+            "type": "Email",
+            "url": "johannes@46elks.com"
+        },
+        {
+            "type": "Email",
+            "url": "martin@46elks.com"
+        },
+        {
+            "type": "Email",
+            "url": "sales@46elks.com"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/46elks"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/289-2019-12-12-20-28-39.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/289-2019-12-12-20-29-27.json"
+        },
+        {
+            "type": "Pricing",
+            "url": "https:\/\/www.46elks.com\/pricing"
+        },
+        {
+            "type": "Pricing",
+            "url": "http:\/\/46elks.com\/pricing\/sweden"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/46elks"
+        }
+    ]
+}
