@@ -1,0 +1,1326 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "46elks API",
+        "description": "The 46elks SMS, MMS & Voice API",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "http:\/\/api.46elks.com\/a1"
+    ],
+    "paths": {
+        "\/me": {
+            "get": {
+                "summary": "",
+                "description": "Get your account data",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "",
+                "description": "Set level for when credit alert e-mail to be sent",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "creditalert",
+                        "in": "formData",
+                        "description": "Alert credits level"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/subaccounts": {
+            "get": {
+                "summary": "",
+                "description": "Get all subaccounts",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "",
+                "description": "Create new subaccount.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "description": "Name of subaccount"
+                    },
+                    {
+                        "name": "usagelimit",
+                        "in": "formData",
+                        "description": "The usage limit for the subaccount."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/subaccounts\/{id}": {
+            "get": {
+                "summary": "",
+                "description": "Get the data about one subaccount.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the subaccount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "",
+                "description": "Update subaccount.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the subaccount"
+                    },
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "description": "Name of subaccount"
+                    },
+                    {
+                        "name": "usagelimit",
+                        "in": "formData",
+                        "description": "The usage limit for the subaccount."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/images": {
+            "get": {
+                "summary": "",
+                "description": "Get image list",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Show images older than this date."
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "Show images newer than this date."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/images\/{id}": {
+            "get": {
+                "summary": "",
+                "description": "Get metadata of one image.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the subaccount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/images\/{id}.jpg": {
+            "get": {
+                "summary": "",
+                "description": "Get image file",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the subaccount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/recordings": {
+            "get": {
+                "summary": "",
+                "description": "Get list of recordings",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Show images older than this date."
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "Show images newer than this date."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/recordings\/{id}": {
+            "get": {
+                "summary": "",
+                "description": "Get metadata of one recording.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the subaccount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/recordings\/{id}.wav": {
+            "get": {
+                "summary": "",
+                "description": "Get recodring soundfile.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the subaccount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/numbers": {
+            "get": {
+                "summary": "",
+                "description": "Get all numbers allocated in the API",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "",
+                "description": "Allocate new number for usage in the API.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "country",
+                        "in": "formData",
+                        "description": "country"
+                    },
+                    {
+                        "name": "capabilities",
+                        "in": "formData",
+                        "description": "SMS, MMS, Voice"
+                    },
+                    {
+                        "name": "sms_url",
+                        "in": "formData",
+                        "description": "Url where to send incomming sms. Set to \"none\" to clear."
+                    },
+                    {
+                        "name": "mms_url",
+                        "in": "formData",
+                        "description": "Url where to send incomming MMS. Set to \"none\" to clear."
+                    },
+                    {
+                        "name": "voice_start",
+                        "in": "formData",
+                        "description": "Url \/ JSON where to send incomming calls. Set to \"none\" to clear."
+                    },
+                    {
+                        "name": "sms_replies",
+                        "in": "formData",
+                        "description": "Prevent automatic response from callback server."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/numbers\/{id}": {
+            "get": {
+                "summary": "",
+                "description": "Get information about one number.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the subaccount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "",
+                "description": "Change parameters of number",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the subaccount"
+                    },
+                    {
+                        "name": "sms_url",
+                        "in": "formData",
+                        "description": "Url where to send incomming sms. Set to \"none\" to clear."
+                    },
+                    {
+                        "name": "voice_start",
+                        "in": "formData",
+                        "description": "Url \/ JSON where to send incomming calls. Set to \"none\" to clear."
+                    },
+                    {
+                        "name": "mms_url",
+                        "in": "formData",
+                        "description": "Url where to send incomming MMS. Set to \"none\" to clear."
+                    },
+                    {
+                        "name": "sms_replies",
+                        "in": "formData",
+                        "description": "Prevent automatic response from callback server."
+                    },
+                    {
+                        "name": "active",
+                        "in": "formData",
+                        "description": "Prevent automatic response from callback server."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/Calls": {
+            "post": {
+                "summary": "",
+                "description": "Start Phonecall",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "formData",
+                        "description": "Your 46elks umber like +46766861647."
+                    },
+                    {
+                        "name": "to",
+                        "in": "formData",
+                        "description": "Number in e164 number like +46723175800."
+                    },
+                    {
+                        "name": "voice_start",
+                        "in": "formData",
+                        "description": "Url \/ JSON where to send incomming calls. Set to \"none\" to clear."
+                    },
+                    {
+                        "name": "whenhangup",
+                        "in": "formData",
+                        "description": "Url to send call data to when call ends."
+                    },
+                    {
+                        "name": "timeout",
+                        "in": "formData",
+                        "description": "Secounds to wait before stopping call."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "List latest 100 Calls",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Show images older than this date."
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "Show images newer than this date."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/Calls\/{id}": {
+            "delete": {
+                "summary": "",
+                "description": "Delete Call from history",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the subaccount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "Get one Call.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the subaccount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/SMS": {
+            "post": {
+                "summary": "",
+                "description": "Send SMS",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "formData",
+                        "description": "Your 46elks umber like +46766861647."
+                    },
+                    {
+                        "name": "to",
+                        "in": "formData",
+                        "description": "Number in e164 number like +46723175800."
+                    },
+                    {
+                        "name": "message",
+                        "in": "formData",
+                        "description": "Text to send to the phone."
+                    },
+                    {
+                        "name": "whendelivered",
+                        "in": "formData",
+                        "description": "Url to send the Delivery report to"
+                    },
+                    {
+                        "name": "flashsms",
+                        "in": "formData",
+                        "description": "Do not store message on the phone."
+                    },
+                    {
+                        "name": "dryrun",
+                        "in": "formData",
+                        "description": "Do not send the message, get price estimation and verify parameters."
+                    },
+                    {
+                        "name": "dontlog",
+                        "in": "formData",
+                        "description": "Do not store data about SMS in the API platform, set to \"message\" to hide message content."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "List latest 100 SMS",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Show images older than this date."
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "Show images newer than this date."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/SMS\/{id}": {
+            "delete": {
+                "summary": "",
+                "description": "Delete SMS",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the subaccount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "Get one SMS.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the subaccount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/MMS": {
+            "post": {
+                "summary": "",
+                "description": "Send MMS",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "formData",
+                        "description": "Your 46elks umber like +46766861647."
+                    },
+                    {
+                        "name": "to",
+                        "in": "formData",
+                        "description": "Number in e164 number like +46723175800."
+                    },
+                    {
+                        "name": "message",
+                        "in": "formData",
+                        "description": "Text to send to the phone."
+                    },
+                    {
+                        "name": "image",
+                        "in": "formData",
+                        "description": "Url or Base64\/url-encoded imagedata to send."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "List latest 100 MMS",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Show images older than this date."
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "Show images newer than this date."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/MMS\/{id}": {
+            "delete": {
+                "summary": "",
+                "description": "Delete MMS",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the subaccount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "",
+                "description": "Get one MMS.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the subaccount"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The account data",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$href": "#\/components\/schemas\/Account"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "RecordingsList": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "data": {
+                "type": "array"
+            },
+            "Recording": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "type": "string"
+                    },
+                    "duration": {
+                        "description": "15",
+                        "type": "integer"
+                    },
+                    "created": {
+                        "description": "2016-02-28T23:54:57.075000",
+                        "type": "string"
+                    }
+                }
+            },
+            "NumberList": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "Number": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "type": "string"
+                    },
+                    "country": {
+                        "description": "se",
+                        "type": "string"
+                    },
+                    "expires": {
+                        "description": "2016-12-01T07:52:15",
+                        "type": "string"
+                    },
+                    "voice_start": {
+                        "description": "https:\/\/yourserver\/hooks\/x",
+                        "type": "string"
+                    },
+                    "sms_url": {
+                        "description": "https:\/\/yourserver\/hooks\/x",
+                        "type": "string"
+                    },
+                    "mms_url": {
+                        "description": "https:\/\/yourserver\/hooks\/x",
+                        "type": "string"
+                    },
+                    "number": {
+                        "description": "+46766861475",
+                        "type": "string"
+                    },
+                    "capabilities": {
+                        "description": "sms, voice, mms",
+                        "type": "array"
+                    },
+                    "sms_replies": {
+                        "description": "yes",
+                        "type": "string"
+                    },
+                    "active": {
+                        "description": "yes",
+                        "type": "string"
+                    },
+                    "category": {
+                        "description": "mobile",
+                        "type": "string"
+                    }
+                }
+            },
+            "capabilities": {
+                "type": "array"
+            },
+            "SMSHistory": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "DeletedMMS": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "type": "string"
+                    },
+                    "deleted": {
+                        "description": "2018-06-25T08:40:22.109482",
+                        "type": "string"
+                    }
+                }
+            },
+            "DeletedCall": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "type": "string"
+                    },
+                    "deleted": {
+                        "description": "2018-06-25T08:40:22.109482",
+                        "type": "string"
+                    }
+                }
+            },
+            "DeletedSMS": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "type": "string"
+                    },
+                    "deleted": {
+                        "description": "2018-06-25T08:40:22.109482",
+                        "type": "string"
+                    }
+                }
+            },
+            "SMS": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "type": "string"
+                    },
+                    "direction": {
+                        "description": "outgoing",
+                        "type": "string"
+                    },
+                    "from": {
+                        "description": "Lasse",
+                        "type": "string"
+                    },
+                    "to": {
+                        "description": "+46723175800",
+                        "type": "string"
+                    },
+                    "message": {
+                        "description": "test",
+                        "type": "string"
+                    },
+                    "created": {
+                        "description": "2016-02-28T23:54:57.075000",
+                        "type": "string"
+                    },
+                    "cost": {
+                        "description": "3500",
+                        "type": "integer"
+                    },
+                    "status": {
+                        "description": "delivered",
+                        "type": "string"
+                    },
+                    "delivered": {
+                        "description": "2016-10-11T13:36:13.081000",
+                        "type": "string"
+                    },
+                    "flashsms": {
+                        "description": "yes",
+                        "type": "string"
+                    }
+                }
+            },
+            "Callstart": {
+                "type": "object",
+                "properties": {
+                    "direction": {
+                        "description": "outgoing",
+                        "type": "string"
+                    },
+                    "from": {
+                        "description": "Lasse",
+                        "type": "string"
+                    },
+                    "created": {
+                        "description": "2016-02-28T23:54:57.075000",
+                        "type": "string"
+                    },
+                    "to": {
+                        "description": "+46723175800",
+                        "type": "string"
+                    },
+                    "state": {
+                        "description": "ongoing",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "type": "string"
+                    }
+                }
+            },
+            "CallsHistory": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "Calls": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "type": "string"
+                    },
+                    "direction": {
+                        "description": "outgoing",
+                        "type": "string"
+                    },
+                    "from": {
+                        "description": "Lasse",
+                        "type": "string"
+                    },
+                    "to": {
+                        "description": "+46723175800",
+                        "type": "string"
+                    },
+                    "legs": {
+                        "description": "List of all call parts.",
+                        "type": "array"
+                    },
+                    "actions": {
+                        "description": "Array of actions taken by the 46elks API",
+                        "type": "array"
+                    },
+                    "start": {
+                        "description": "2016-11-03T09:24:24.333000",
+                        "type": "string"
+                    },
+                    "state": {
+                        "description": "ongoing",
+                        "type": "string"
+                    },
+                    "created": {
+                        "description": "2016-02-28T23:54:57.075000",
+                        "type": "string"
+                    },
+                    "cost": {
+                        "description": "3500",
+                        "type": "integer"
+                    },
+                    "duration": {
+                        "description": "15",
+                        "type": "integer"
+                    }
+                }
+            },
+            "legs": {
+                "type": "array"
+            },
+            "actions": {
+                "type": "array"
+            },
+            "MMSHistory": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "MMS": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "type": "string"
+                    },
+                    "direction": {
+                        "description": "outgoing",
+                        "type": "string"
+                    },
+                    "from": {
+                        "description": "Lasse",
+                        "type": "string"
+                    },
+                    "to": {
+                        "description": "+46723175800",
+                        "type": "string"
+                    },
+                    "message": {
+                        "description": "test",
+                        "type": "string"
+                    },
+                    "created": {
+                        "description": "2016-02-28T23:54:57.075000",
+                        "type": "string"
+                    },
+                    "cost": {
+                        "description": "3500",
+                        "type": "integer"
+                    },
+                    "images": {
+                        "description": "m84af96809ff8989f3668c93aaaedb69c-i0",
+                        "type": "array"
+                    }
+                }
+            },
+            "images": {
+                "type": "array"
+            },
+            "ImagesList": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "Image": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "type": "string"
+                    },
+                    "digest": {
+                        "description": "6f15a43f350b49a02e6cdb0dd1863feeaa9f2fc4",
+                        "type": "string"
+                    },
+                    "created": {
+                        "description": "2016-02-28T23:54:57.075000",
+                        "type": "string"
+                    },
+                    "filetype": {
+                        "description": "jpg",
+                        "type": "integer"
+                    },
+                    "mmsid": {
+                        "description": "mf3d05c159aa49e1951c5301bc6af1bac",
+                        "type": "string"
+                    },
+                    "bytes": {
+                        "description": "42",
+                        "type": "integer"
+                    }
+                }
+            },
+            "SubaccountsList": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "Subaccount": {
+                "type": "object",
+                "properties": {
+                    "usage": {
+                        "description": "10000",
+                        "type": "integer"
+                    },
+                    "id": {
+                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "type": "string"
+                    },
+                    "secret": {
+                        "description": "D81DEF1B65E19A83DBCEA0BE0D89D082",
+                        "type": "string"
+                    },
+                    "created": {
+                        "description": "2016-02-28T23:54:57.075000",
+                        "type": "string"
+                    },
+                    "usagelimit": {
+                        "description": "99999999999",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "This Co",
+                        "type": "string"
+                    }
+                }
+            },
+            "Account": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "type": "string"
+                    },
+                    "mobilenumber": {
+                        "description": "+46723175800",
+                        "type": "string"
+                    },
+                    "balance": {
+                        "description": "9670500",
+                        "type": "integer"
+                    },
+                    "creditalert": {
+                        "description": "200000",
+                        "type": "integer"
+                    },
+                    "currency": {
+                        "description": "SEK \/ EUR",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "martin.thure@gmail.com",
+                        "type": "string"
+                    },
+                    "displayname": {
+                        "description": "Martin Harari Thuresson",
+                        "type": "string"
+                    }
+                }
+            },
+            "Error": {
+                "type": "object"
+            }
+        }
+    }
+}
