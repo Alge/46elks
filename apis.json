@@ -19,8 +19,8 @@
         "sms",
         "telecommunications"
     ],
-    "created": "2019-12-18",
-    "modified": "2019-12-18",
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
     "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/46elks\/master\/apis.json",
     "specificationVersion": "0.14",
     "apis": [
@@ -43,6 +43,14 @@
                 {
                     "type": "x-postman-collecction",
                     "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/46elks-api-postman-collection.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/46elks-api-postman-collection.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/46elks-api-postman-collection.json"
                 }
             ]
         }
@@ -52,6 +60,10 @@
         {
             "type": "API.json - Authoritative",
             "url": "http:\/\/pi.thure.org\/apis.json"
+        },
+        {
+            "type": "APIs.json",
+            "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/apis.json"
         },
         {
             "type": "Website",
