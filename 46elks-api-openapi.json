@@ -12,9 +12,9 @@
     "paths": {
         "\/me": {
             "get": {
-                "summary": "",
+                "summary": "Get Me",
                 "description": "Get your account data",
-                "operationId": "",
+                "operationId": "GetMe",
                 "deprecated": 0,
                 "parameters": [],
                 "responses": {
@@ -31,9 +31,9 @@
                 }
             },
             "post": {
-                "summary": "",
+                "summary": "Post Me",
                 "description": "Set level for when credit alert e-mail to be sent",
-                "operationId": "",
+                "operationId": "PostMe",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -58,9 +58,9 @@
         },
         "\/subaccounts": {
             "get": {
-                "summary": "",
+                "summary": "Get Subaccounts",
                 "description": "Get all subaccounts",
-                "operationId": "",
+                "operationId": "GetSubaccounts",
                 "deprecated": 0,
                 "parameters": [],
                 "responses": {
@@ -77,9 +77,9 @@
                 }
             },
             "post": {
-                "summary": "",
+                "summary": "Post Subaccounts",
                 "description": "Create new subaccount.",
-                "operationId": "",
+                "operationId": "PostSubaccounts",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -109,9 +109,9 @@
         },
         "\/subaccounts\/{id}": {
             "get": {
-                "summary": "",
+                "summary": "Get Subaccounts",
                 "description": "Get the data about one subaccount.",
-                "operationId": "",
+                "operationId": "GetSubaccountsId",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -134,9 +134,9 @@
                 }
             },
             "post": {
-                "summary": "",
+                "summary": "Post Subaccounts",
                 "description": "Update subaccount.",
-                "operationId": "",
+                "operationId": "PostSubaccountsId",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -171,9 +171,9 @@
         },
         "\/images": {
             "get": {
-                "summary": "",
+                "summary": "Get Images",
                 "description": "Get image list",
-                "operationId": "",
+                "operationId": "GetImages",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -203,9 +203,9 @@
         },
         "\/images\/{id}": {
             "get": {
-                "summary": "",
+                "summary": "Get Images",
                 "description": "Get metadata of one image.",
-                "operationId": "",
+                "operationId": "GetImagesId",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -230,9 +230,9 @@
         },
         "\/images\/{id}.jpg": {
             "get": {
-                "summary": "",
+                "summary": "Get Images",
                 "description": "Get image file",
-                "operationId": "",
+                "operationId": "GetImagesIdJpg",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -257,9 +257,9 @@
         },
         "\/recordings": {
             "get": {
-                "summary": "",
+                "summary": "Get Recordings",
                 "description": "Get list of recordings",
-                "operationId": "",
+                "operationId": "GetRecordings",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -289,9 +289,9 @@
         },
         "\/recordings\/{id}": {
             "get": {
-                "summary": "",
+                "summary": "Get Recordings",
                 "description": "Get metadata of one recording.",
-                "operationId": "",
+                "operationId": "GetRecordingsId",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -316,9 +316,9 @@
         },
         "\/recordings\/{id}.wav": {
             "get": {
-                "summary": "",
+                "summary": "Get Recordings",
                 "description": "Get recodring soundfile.",
-                "operationId": "",
+                "operationId": "GetRecordingsIdWav",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -343,9 +343,9 @@
         },
         "\/numbers": {
             "get": {
-                "summary": "",
+                "summary": "Get Numbers",
                 "description": "Get all numbers allocated in the API",
-                "operationId": "",
+                "operationId": "GetNumbers",
                 "deprecated": 0,
                 "parameters": [],
                 "responses": {
@@ -362,9 +362,9 @@
                 }
             },
             "post": {
-                "summary": "",
+                "summary": "Post Numbers",
                 "description": "Allocate new number for usage in the API.",
-                "operationId": "",
+                "operationId": "PostNumbers",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -414,9 +414,9 @@
         },
         "\/numbers\/{id}": {
             "get": {
-                "summary": "",
+                "summary": "Get Numbers",
                 "description": "Get information about one number.",
-                "operationId": "",
+                "operationId": "GetNumbersId",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -439,9 +439,9 @@
                 }
             },
             "post": {
-                "summary": "",
+                "summary": "Post Numbers",
                 "description": "Change parameters of number",
-                "operationId": "",
+                "operationId": "PostNumbersId",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -491,9 +491,9 @@
         },
         "\/Calls": {
             "post": {
-                "summary": "",
+                "summary": "Post Calls",
                 "description": "Start Phonecall",
-                "operationId": "",
+                "operationId": "PostCalls",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -536,9 +536,9 @@
                 }
             },
             "get": {
-                "summary": "",
+                "summary": "Get Calls",
                 "description": "List latest 100 Calls",
-                "operationId": "",
+                "operationId": "GetCalls",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -568,9 +568,9 @@
         },
         "\/Calls\/{id}": {
             "delete": {
-                "summary": "",
+                "summary": "Delete Calls",
                 "description": "Delete Call from history",
-                "operationId": "",
+                "operationId": "DeleteCallsId",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -593,9 +593,9 @@
                 }
             },
             "get": {
-                "summary": "",
+                "summary": "Get Calls",
                 "description": "Get one Call.",
-                "operationId": "",
+                "operationId": "GetCallsId",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -620,9 +620,9 @@
         },
         "\/SMS": {
             "post": {
-                "summary": "",
+                "summary": "Post SMS",
                 "description": "Send SMS",
-                "operationId": "",
+                "operationId": "PostSms",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -675,9 +675,9 @@
                 }
             },
             "get": {
-                "summary": "",
+                "summary": "Get SMS",
                 "description": "List latest 100 SMS",
-                "operationId": "",
+                "operationId": "GetSms",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -707,9 +707,9 @@
         },
         "\/SMS\/{id}": {
             "delete": {
-                "summary": "",
+                "summary": "Delete SMS",
                 "description": "Delete SMS",
-                "operationId": "",
+                "operationId": "DeleteSmsId",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -732,9 +732,9 @@
                 }
             },
             "get": {
-                "summary": "",
+                "summary": "Get SMS",
                 "description": "Get one SMS.",
-                "operationId": "",
+                "operationId": "GetSmsId",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -759,9 +759,9 @@
         },
         "\/MMS": {
             "post": {
-                "summary": "",
+                "summary": "Post MMS",
                 "description": "Send MMS",
-                "operationId": "",
+                "operationId": "PostMms",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -799,9 +799,9 @@
                 }
             },
             "get": {
-                "summary": "",
+                "summary": "Get MMS",
                 "description": "List latest 100 MMS",
-                "operationId": "",
+                "operationId": "GetMms",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -831,9 +831,9 @@
         },
         "\/MMS\/{id}": {
             "delete": {
-                "summary": "",
+                "summary": "Delete MMS",
                 "description": "Delete MMS",
-                "operationId": "",
+                "operationId": "DeleteMmsId",
                 "deprecated": 0,
                 "parameters": [
                     {
@@ -856,9 +856,9 @@
                 }
             },
             "get": {
-                "summary": "",
+                "summary": "Get MMS",
                 "description": "Get one MMS.",
-                "operationId": "",
+                "operationId": "GetMmsId",
                 "deprecated": 0,
                 "parameters": [
                     {
