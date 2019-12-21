@@ -6,6 +6,7 @@
         "api provider",
         "automated phone calls",
         "call forwarding",
+        "dynamic call forwarding",
         "have api",
         "have swagger",
         "ivr",
@@ -15,12 +16,14 @@
         "phone",
         "phone calls",
         "phone numbers",
+        "photo messaging",
         "profile",
         "sms",
-        "telecommunications"
+        "telecommunications",
+        "virtual phone numbers"
     ],
-    "created": "2019-12-19",
-    "modified": "2019-12-19",
+    "created": "2019-12-20",
+    "modified": "2019-12-20",
     "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/46elks\/master\/apis.json",
     "specificationVersion": "0.14",
     "apis": [
@@ -34,23 +37,7 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/46elks-api-openapi.json"
-                },
-                {
-                    "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/apis.json"
-                },
-                {
-                    "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/46elks-api-postman-collection.json"
-                },
-                {
-                    "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/46elks-api-postman-collection.json"
-                },
-                {
-                    "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/46elks-api-postman-collection.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/46elks\/master\/46elks-api-openapi.json"
                 }
             ]
         }
@@ -78,12 +65,20 @@
             "url": "http:\/\/feeds.feedburner.com\/46elksBlog"
         },
         {
+            "type": "Contact Form",
+            "url": "https:\/\/46elks.com\/contact"
+        },
+        {
             "type": "Crunchbase",
             "url": "http:\/\/www.crunchbase.com\/company\/46elks"
         },
         {
             "type": "Crunchbase",
             "url": "https:\/\/crunchbase.com\/organization\/46elks"
+        },
+        {
+            "type": "Documentation",
+            "url": "https:\/\/46elks.com\/docs\/send-sms"
         },
         {
             "type": "Email",
@@ -124,6 +119,18 @@
         {
             "type": "Pricing",
             "url": "http:\/\/46elks.com\/pricing\/sweden"
+        },
+        {
+            "type": "Pricing",
+            "url": "https:\/\/46elks.com\/pricing"
+        },
+        {
+            "type": "Support",
+            "url": "https:\/\/46elks.com\/support"
+        },
+        {
+            "type": "Tutorials",
+            "url": "https:\/\/46elks.com\/getting-started"
         },
         {
             "type": "Twitter",
