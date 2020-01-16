@@ -4,7 +4,7 @@
         "version": "1.0.0",
         "title": "46elks API",
         "description": "The 46elks SMS, MMS & Voice API",
-        "termsOfService": "http:\/\/exmple.com\/license\/"
+        "termsOfService": "https://46elks.com/terms"
     },
     "servers": [
         "https:\/\/api.46elks.com\/a1"
