@@ -7,7 +7,7 @@
         "termsOfService": "http:\/\/exmple.com\/license\/"
     },
     "servers": [
-        "http:\/\/api.46elks.com\/a1"
+        "https:\/\/api.46elks.com\/a1"
     ],
     "paths": {
         "\/me": {
