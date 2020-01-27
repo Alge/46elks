@@ -1,1327 +1,2226 @@
 {
-    "openapi": "3.0.0",
-    "info": {
-        "version": "1.0.0",
-        "title": "46elks API",
-        "description": "The 46elks SMS, MMS & Voice API",
-        "termsOfService": "https://46elks.com/terms"
-    },
-    "servers": [
-        "https:\/\/api.46elks.com\/a1"
-    ],
-    "paths": {
-        "\/me": {
-            "get": {
-                "summary": "Get Me",
-                "description": "Get your account data",
-                "operationId": "GetMe",
-                "deprecated": false,
-                "parameters": [],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
+  "openapi": "3.0.0",
+  "info": {
+    "title": "46elks API",
+    "description": "The 46elks SMS, MMS & Voice API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/me": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Get your account data",
+        "responses": {
+          "200": {
+            "description": "The account data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Account"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n\"mobilenumber\": \"+46766861647\"\n\"displayname\": \"Your name or company\"\n\"id\": \"u5a9566c072160b318445d163949bf505\"\n\"currency\": \"SEK\"\n\"trialactivated\": \"2013-06-20T18:44:27.434000\"\n\"balance\": 9670500\n\"email\": \"help@46elks.com\"\n}\n"
+                  }
                 }
-            },
-            "post": {
-                "summary": "Post Me",
-                "description": "Set level for when credit alert e-mail to be sent",
-                "operationId": "PostMe",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "creditalert",
-                        "in": "formData",
-                        "description": "Alert credits level"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
+              }
             }
-        },
-        "\/subaccounts": {
-            "get": {
-                "summary": "Get Subaccounts",
-                "description": "Get all subaccounts",
-                "operationId": "GetSubaccounts",
-                "deprecated": false,
-                "parameters": [],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "post": {
-                "summary": "Post Subaccounts",
-                "description": "Create new subaccount.",
-                "operationId": "PostSubaccounts",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "name",
-                        "in": "formData",
-                        "description": "Name of subaccount"
-                    },
-                    {
-                        "name": "usagelimit",
-                        "in": "formData",
-                        "description": "The usage limit for the subaccount."
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "\/subaccounts\/{id}": {
-            "get": {
-                "summary": "Get Subaccounts",
-                "description": "Get the data about one subaccount.",
-                "operationId": "GetSubaccountsId",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the subaccount"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "post": {
-                "summary": "Post Subaccounts",
-                "description": "Update subaccount.",
-                "operationId": "PostSubaccountsId",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the subaccount"
-                    },
-                    {
-                        "name": "name",
-                        "in": "formData",
-                        "description": "Name of subaccount"
-                    },
-                    {
-                        "name": "usagelimit",
-                        "in": "formData",
-                        "description": "The usage limit for the subaccount."
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "\/images": {
-            "get": {
-                "summary": "Get Images",
-                "description": "Get image list",
-                "operationId": "GetImages",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "start",
-                        "in": "query",
-                        "description": "Show images older than this date."
-                    },
-                    {
-                        "name": "end",
-                        "in": "query",
-                        "description": "Show images newer than this date."
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "\/images\/{id}": {
-            "get": {
-                "summary": "Get Images",
-                "description": "Get metadata of one image.",
-                "operationId": "GetImagesId",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the subaccount"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "\/images\/{id}.jpg": {
-            "get": {
-                "summary": "Get Images",
-                "description": "Get image file",
-                "operationId": "GetImagesIdJpg",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the subaccount"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "\/recordings": {
-            "get": {
-                "summary": "Get Recordings",
-                "description": "Get list of recordings",
-                "operationId": "GetRecordings",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "start",
-                        "in": "query",
-                        "description": "Show images older than this date."
-                    },
-                    {
-                        "name": "end",
-                        "in": "query",
-                        "description": "Show images newer than this date."
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "\/recordings\/{id}": {
-            "get": {
-                "summary": "Get Recordings",
-                "description": "Get metadata of one recording.",
-                "operationId": "GetRecordingsId",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the subaccount"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "\/recordings\/{id}.wav": {
-            "get": {
-                "summary": "Get Recordings",
-                "description": "Get recodring soundfile.",
-                "operationId": "GetRecordingsIdWav",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the subaccount"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "\/numbers": {
-            "get": {
-                "summary": "Get Numbers",
-                "description": "Get all numbers allocated in the API",
-                "operationId": "GetNumbers",
-                "deprecated": false,
-                "parameters": [],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "post": {
-                "summary": "Post Numbers",
-                "description": "Allocate new number for usage in the API.",
-                "operationId": "PostNumbers",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "country",
-                        "in": "formData",
-                        "description": "country"
-                    },
-                    {
-                        "name": "capabilities",
-                        "in": "formData",
-                        "description": "SMS, MMS, Voice"
-                    },
-                    {
-                        "name": "sms_url",
-                        "in": "formData",
-                        "description": "Url where to send incomming sms. Set to \"none\" to clear."
-                    },
-                    {
-                        "name": "mms_url",
-                        "in": "formData",
-                        "description": "Url where to send incomming MMS. Set to \"none\" to clear."
-                    },
-                    {
-                        "name": "voice_start",
-                        "in": "formData",
-                        "description": "Url \/ JSON where to send incomming calls. Set to \"none\" to clear."
-                    },
-                    {
-                        "name": "sms_replies",
-                        "in": "formData",
-                        "description": "Prevent automatic response from callback server."
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "\/numbers\/{id}": {
-            "get": {
-                "summary": "Get Numbers",
-                "description": "Get information about one number.",
-                "operationId": "GetNumbersId",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the subaccount"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "post": {
-                "summary": "Post Numbers",
-                "description": "Change parameters of number",
-                "operationId": "PostNumbersId",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the subaccount"
-                    },
-                    {
-                        "name": "sms_url",
-                        "in": "formData",
-                        "description": "Url where to send incomming sms. Set to \"none\" to clear."
-                    },
-                    {
-                        "name": "voice_start",
-                        "in": "formData",
-                        "description": "Url \/ JSON where to send incomming calls. Set to \"none\" to clear."
-                    },
-                    {
-                        "name": "mms_url",
-                        "in": "formData",
-                        "description": "Url where to send incomming MMS. Set to \"none\" to clear."
-                    },
-                    {
-                        "name": "sms_replies",
-                        "in": "formData",
-                        "description": "Prevent automatic response from callback server."
-                    },
-                    {
-                        "name": "active",
-                        "in": "formData",
-                        "description": "Prevent automatic response from callback server."
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "\/Calls": {
-            "post": {
-                "summary": "Post Calls",
-                "description": "Start Phonecall",
-                "operationId": "PostCalls",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "from",
-                        "in": "formData",
-                        "description": "Your 46elks umber like +46766861647."
-                    },
-                    {
-                        "name": "to",
-                        "in": "formData",
-                        "description": "Number in e164 number like +46723175800."
-                    },
-                    {
-                        "name": "voice_start",
-                        "in": "formData",
-                        "description": "Url \/ JSON where to send incomming calls. Set to \"none\" to clear."
-                    },
-                    {
-                        "name": "whenhangup",
-                        "in": "formData",
-                        "description": "Url to send call data to when call ends."
-                    },
-                    {
-                        "name": "timeout",
-                        "in": "formData",
-                        "description": "Secounds to wait before stopping call."
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "get": {
-                "summary": "Get Calls",
-                "description": "List latest 100 Calls",
-                "operationId": "GetCalls",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "start",
-                        "in": "query",
-                        "description": "Show images older than this date."
-                    },
-                    {
-                        "name": "end",
-                        "in": "query",
-                        "description": "Show images newer than this date."
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The account data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "\/Calls\/{id}": {
-            "delete": {
-                "summary": "Delete Calls",
-                "description": "Delete Call from history",
-                "operationId": "DeleteCallsId",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the subaccount"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The call history",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Call"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "get": {
-                "summary": "Get Calls",
-                "description": "Get one Call.",
-                "operationId": "GetCallsId",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the call"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The call data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/Call"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "\/SMS": {
-            "post": {
-                "summary": "Post SMS",
-                "description": "Send SMS",
-                "operationId": "PostSms",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "from",
-                        "in": "formData",
-                        "description": "Your 46elks number like +46766861647."
-                    },
-                    {
-                        "name": "to",
-                        "in": "formData",
-                        "description": "Number in e164 number like +46723175800."
-                    },
-                    {
-                        "name": "message",
-                        "in": "formData",
-                        "description": "Text to send to the phone."
-                    },
-                    {
-                        "name": "whendelivered",
-                        "in": "formData",
-                        "description": "Url to send the Delivery report to"
-                    },
-                    {
-                        "name": "flashsms",
-                        "in": "formData",
-                        "description": "Send as a flash SMS."
-                    },
-                    {
-                        "name": "dryrun",
-                        "in": "formData",
-                        "description": "Do not send the message, get price estimation and verify parameters."
-                    },
-                    {
-                        "name": "dontlog",
-                        "in": "formData",
-                        "description": "Do not store data about SMS in the API platform, set to \"message\" to hide message content."
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The SMS data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/SMS"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "get": {
-                "summary": "Get SMS",
-                "description": "List latest 100 SMS",
-                "operationId": "GetSms",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "start",
-                        "in": "query",
-                        "description": "Show SMS older than this date."
-                    },
-                    {
-                        "name": "end",
-                        "in": "query",
-                        "description": "Show SMS newer than this date."
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The SMS data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/SMSHistory"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "\/SMS\/{id}": {
-            "delete": {
-                "summary": "Delete SMS",
-                "description": "Delete SMS",
-                "operationId": "DeleteSmsId",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the SMS"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The SMS data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/DeletedSMS"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "get": {
-                "summary": "Get SMS",
-                "description": "Get one SMS.",
-                "operationId": "GetSmsId",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the SMS"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The SMS data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/SMS"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "\/MMS": {
-            "post": {
-                "summary": "Post MMS",
-                "description": "Send MMS",
-                "operationId": "PostMms",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "from",
-                        "in": "formData",
-                        "description": "Your mms enabled 46elks number like +46766861647 or the string 'noreply'."
-                    },
-                    {
-                        "name": "to",
-                        "in": "formData",
-                        "description": "Number in e164 number like +46766861004."
-                    },
-                    {
-                        "name": "message",
-                        "in": "formData",
-                        "description": "Text to send in the MMS."
-                    },
-                    {
-                        "name": "image",
-                        "in": "formData",
-                        "description": "Url or Base64\/url-encoded imagedata to send."
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The MMS data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/MMS"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "get": {
-                "summary": "Get MMS",
-                "description": "List latest 100 MMS",
-                "operationId": "GetMms",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "start",
-                        "in": "query",
-                        "description": "Show images older than this date."
-                    },
-                    {
-                        "name": "end",
-                        "in": "query",
-                        "description": "Show images newer than this date."
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The MMS data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/MMS"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "\/MMS\/{id}": {
-            "delete": {
-                "summary": "Delete MMS",
-                "description": "Delete MMS",
-                "operationId": "DeleteMmsId",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the MMS"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The MMS data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/DeletedMMS"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "get": {
-                "summary": "Get MMS",
-                "description": "Get one MMS.",
-                "operationId": "GetMmsId",
-                "deprecated": false,
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the MMS"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "The MMS data",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$href": "#\/components\/schemas\/MMS"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+          }
         }
-    },
-    "components": {
-        "schemas": {
-            "RecordingsList": {
+      },
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Set level for when credit alert e-mail to be sent",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
                 "type": "object",
                 "properties": {
-                    "data": {
-                        "description": "",
-                        "type": "array"
-                    }
-                }
-            },
-            "data": {
-                "type": "array"
-            },
-            "Recording": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
-                        "type": "string"
-                    },
-                    "duration": {
-                        "description": "15",
-                        "type": "integer"
-                    },
-                    "created": {
-                        "description": "2016-02-28T23:54:57.075000",
-                        "type": "string"
-                    }
-                }
-            },
-            "NumberList": {
-                "type": "object",
-                "properties": {
-                    "data": {
-                        "description": "",
-                        "type": "array"
-                    }
-                }
-            },
-            "Number": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
-                        "type": "string"
-                    },
-                    "country": {
-                        "description": "se",
-                        "type": "string"
-                    },
-                    "expires": {
-                        "description": "2016-12-01T07:52:15",
-                        "type": "string"
-                    },
-                    "voice_start": {
-                        "description": "https:\/\/yourserver\/hooks\/x",
-                        "type": "string"
-                    },
-                    "sms_url": {
-                        "description": "https:\/\/yourserver\/hooks\/x",
-                        "type": "string"
-                    },
-                    "mms_url": {
-                        "description": "https:\/\/yourserver\/hooks\/x",
-                        "type": "string"
-                    },
-                    "number": {
-                        "description": "+46766861475",
-                        "type": "string"
-                    },
-                    "capabilities": {
-                        "description": "sms, voice, mms",
-                        "type": "array"
-                    },
-                    "sms_replies": {
-                        "description": "yes",
-                        "type": "string"
-                    },
-                    "active": {
-                        "description": "yes",
-                        "type": "string"
-                    },
-                    "category": {
-                        "description": "mobile",
-                        "type": "string"
-                    }
-                }
-            },
-            "capabilities": {
-                "type": "array"
-            },
-            "SMSHistory": {
-                "type": "object",
-                "properties": {
-                    "data": {
-                        "description": "",
-                        "type": "array"
-                    }
-                }
-            },
-            "DeletedMMS": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
-                        "type": "string"
-                    },
-                    "deleted": {
-                        "description": "2018-06-25T08:40:22.109482",
-                        "type": "string"
-                    }
-                }
-            },
-            "DeletedCall": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
-                        "type": "string"
-                    },
-                    "deleted": {
-                        "description": "2018-06-25T08:40:22.109482",
-                        "type": "string"
-                    }
-                }
-            },
-            "DeletedSMS": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
-                        "type": "string"
-                    },
-                    "deleted": {
-                        "description": "2018-06-25T08:40:22.109482",
-                        "type": "string"
-                    }
-                }
-            },
-            "SMS": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
-                        "type": "string"
-                    },
-                    "direction": {
-                        "description": "outgoing",
-                        "type": "string"
-                    },
-                    "from": {
-                        "description": "Lasse",
-                        "type": "string"
-                    },
-                    "to": {
-                        "description": "+46723175800",
-                        "type": "string"
-                    },
-                    "message": {
-                        "description": "test",
-                        "type": "string"
-                    },
-                    "created": {
-                        "description": "2016-02-28T23:54:57.075000",
-                        "type": "string"
-                    },
-                    "cost": {
-                        "description": "3500",
-                        "type": "integer"
-                    },
-                    "status": {
-                        "description": "delivered",
-                        "type": "string"
-                    },
-                    "delivered": {
-                        "description": "2016-10-11T13:36:13.081000",
-                        "type": "string"
-                    },
-                    "flashsms": {
-                        "description": "yes",
-                        "type": "string"
-                    }
-                }
-            },
-            "Callstart": {
-                "type": "object",
-                "properties": {
-                    "direction": {
-                        "description": "outgoing",
-                        "type": "string"
-                    },
-                    "from": {
-                        "description": "+46766861004",
-                        "type": "string"
-                    },
-                    "created": {
-                        "description": "2016-02-28T23:54:57.075000",
-                        "type": "string"
-                    },
-                    "to": {
-                        "description": "+46766861004",
-                        "type": "string"
-                    },
-                    "state": {
-                        "description": "ongoing",
-                        "type": "string"
-                    },
-                    "id": {
-                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b",
-                        "type": "string"
-                    }
-                }
-            },
-            "CallsHistory": {
-                "type": "object",
-                "properties": {
-                    "data": {
-                        "description": "",
-                        "type": "array"
-                    }
-                }
-            },
-            "Calls": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b",
-                        "type": "string"
-                    },
-                    "direction": {
-                        "description": "outgoing",
-                        "type": "string"
-                    },
-                    "from": {
-                        "description": "+46766861004",
-                        "type": "string"
-                    },
-                    "to": {
-                        "description": "+46766761004",
-                        "type": "string"
-                    },
-                    "legs": {
-                        "description": "List of all call parts.",
-                        "type": "array"
-                    },
-                    "actions": {
-                        "description": "Array of actions taken by the 46elks API",
-                        "type": "array"
-                    },
-                    "start": {
-                        "description": "2016-11-03T09:24:24.333000",
-                        "type": "string"
-                    },
-                    "state": {
-                        "description": "ongoing",
-                        "type": "string"
-                    },
-                    "created": {
-                        "description": "2016-02-28T23:54:57.075000",
-                        "type": "string"
-                    },
-                    "cost": {
-                        "description": "3500",
-                        "type": "integer"
-                    },
-                    "duration": {
-                        "description": "15",
-                        "type": "integer"
-                    }
-                }
-            },
-            "legs": {
-                "type": "array"
-            },
-            "actions": {
-                "type": "array"
-            },
-            "MMSHistory": {
-                "type": "object",
-                "properties": {
-                    "data": {
-                        "description": "",
-                        "type": "array"
-                    }
-                }
-            },
-            "MMS": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "description": "m84af96809ff8989f3668c93aaaedb69",
-                        "type": "string"
-                    },
-                    "direction": {
-                        "description": "outgoing",
-                        "type": "string"
-                    },
-                    "from": {
-                        "description": "+46701234567",
-                        "type": "string"
-                    },
-                    "to": {
-                        "description": "+46766861004",
-                        "type": "string"
-                    },
-                    "message": {
-                        "description": "test",
-                        "type": "string"
-                    },
-                    "created": {
-                        "description": "2016-02-28T23:54:57.075000",
-                        "type": "string"
-                    },
-                    "cost": {
-                        "description": "3500",
-                        "type": "integer"
-                    },
-                    "images": {
-                        "description": "m84af96809ff8989f3668c93aaaedb69c-i0",
-                        "type": "array"
-                    }
-                }
-            },
-            "images": {
-                "type": "array"
-            },
-            "ImagesList": {
-                "type": "object",
-                "properties": {
-                    "data": {
-                        "description": "",
-                        "type": "array"
-                    }
-                }
-            },
-            "Image": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "description": "m84af96809ff8989f3668c93aaaedb69c-i0",
-                        "type": "string"
-                    },
-                    "digest": {
-                        "description": "6f15a43f350b49a02e6cdb0dd1863feeaa9f2fc4",
-                        "type": "string"
-                    },
-                    "created": {
-                        "description": "2016-02-28T23:54:57.075000",
-                        "type": "string"
-                    },
-                    "filetype": {
-                        "description": "jpg",
-                        "type": "string"
-                    },
-                    "mmsid": {
-                        "description": "m84af96809ff8989f3668c93aaaedb69c",
-                        "type": "string"
-                    },
-                    "bytes": {
-                        "description": "42",
-                        "type": "integer"
-                    }
-                }
-            },
-            "SubaccountsList": {
-                "type": "object",
-                "properties": {
-                    "data": {
-                        "description": "",
-                        "type": "array"
-                    }
-                }
-            },
-            "Subaccount": {
-                "type": "object",
-                "properties": {
-                    "usage": {
-                        "description": "10000",
-                        "type": "integer"
-                    },
-                    "id": {
-                        "description": "a361e5927d2c4d7dcf71a142dc0ec6d9b",
-                        "type": "string"
-                    },
-                    "secret": {
-                        "description": "D81DEF1B65E19A83DBCEA0BE0D89D082",
-                        "type": "string"
-                    },
-                    "created": {
-                        "description": "2016-02-28T23:54:57.075000",
-                        "type": "string"
-                    },
-                    "usagelimit": {
-                        "description": "99999999999",
-                        "type": "integer"
-                    },
-                    "name": {
-                        "description": "This Co",
-                        "type": "string"
-                    }
-                }
-            },
-            "Account": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "description": "u361e5927d2c4d7dcf71a142dc0ec6d9b",
-                        "type": "string"
-                    },
-                    "mobilenumber": {
-                        "description": "+46723175800",
-                        "type": "string"
-                    },
-                    "balance": {
-                        "description": "9670500",
-                        "type": "integer"
-                    },
-                    "creditalert": {
-                        "description": "200000",
-                        "type": "integer"
-                    },
-                    "currency": {
-                        "description": "SEK \/ EUR",
-                        "type": "string"
-                    },
-                    "email": {
-                        "description": "hello@46elks.com",
-                        "type": "string"
-                    },
-                    "displayname": {
-                        "description": "46Elks AB",
-                        "type": "string"
-                    }
-                }
-            },
-            "Error": {
-                "type": "object"
+                  "creditalert": {
+                    "description": "Alert credits level",
+                    "type": "string",
+                    "default": "200000"
+                  }
+                },
+                "required": [
+                  "creditalert"
+                ]
+              }
             }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The account data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Account"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n\"mobilenumber\": \"+46766861647\",\n\"displayname\": \"Your name or company\",\n\"id\": \"u5a9566c072160b318445d163949bf505\",\n\"currency\": \"SEK\",\n\"trialactivated\": \"2013-06-20T18:44:27.434000\",\n\"balance\": 9670500,\n\"email\": \"help@46elks.com\",\n\"creditalert\": 200000\n}\n"
+                  }
+                }
+              }
+            }
+          }
         }
+      }
+    },
+    "/subaccounts": {
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Get all subaccounts",
+        "parameters": [
+          {
+            "name": "start",
+            "in": "query",
+            "description": "Show objects older than this date on format 2016-01-01T00:00:00.000",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "Show objects newer than this date on format 2016-01-01T00:00:00.000",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of objects to fetch",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100
+            }
+          }
+        ],
+        "tags": [
+          "Subaccount"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of subaccounts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubaccountsList"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{data:[\n    {\n    \"secret\": \"D81DEF1B65E19A83DBCEA0BE0D89D082\"\n    \"created\": \"2014-12-08T13:18:07.625000\"\n    \"usagelimit\": 67575670000\n    \"id\": \"af3d05a159669e1951c5301bc6a61bac\"\n    \"name\": \"This Co\"\n    \"usage\": 0\n    },\n    {\n    \"secret\": \"D81DEF1B65E19A83DBCEA0BE0D89D082\"\n    \"created\": \"2014-12-08T13:18:07.625000\"\n    \"usagelimit\": 345350000\n    \"id\": \"af3d05a159669e1951c5301bc6a61bac2\"\n    \"name\": \"This Co2\"\n    \"usage\": 345300\n    }\n    ]\n}\n"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Create new subaccount.",
+        "tags": [
+          "Subaccount"
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "description": "Name of subaccount",
+                    "type": "string",
+                    "default": "Company XYZ"
+                  },
+                  "usagelimit": {
+                    "description": "The usage limit for the subaccount.",
+                    "type": "integer",
+                    "default": 3423432400
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The created subaccount",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Subaccount"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n\"secret\": \"D81DEF1B65E19A83DBCEA0BE0D89D082\"\n\"created\": \"2014-12-08T13:18:07.625000\"\n\"usagelimit\": 99999999999\n\"id\": \"af3d05a159669e1951c5301bc6a61bac\"\n\"name\": \"This Co2\"\n}\n"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subaccounts/{id}": {
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Get the data about one subaccount.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the subaccount",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "a70df59406a2b4643b96f3f10e1bfb7b1"
+            }
+          }
+        ],
+        "tags": [
+          "Subaccount"
+        ],
+        "responses": {
+          "200": {
+            "description": "The subaccount data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Subaccount"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n\"secret\": \"D81DEF1B65E19A83DBCEA0BE0D89D082\"\n\"created\": \"2014-12-08T13:18:07.625000\"\n\"usagelimit\": 910000\n\"id\": \"af3d05a159669e1951c5301bc6a61bac\"\n\"name\": \"This Co\"\n\"usage\": 12300\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Subaccount not found",
+            "content": {
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Not found"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Subaccount"
+        ],
+        "description": "Update subaccount.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the subaccount",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "a70df59406a1b4643b96f3f10e1bfb7b1"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "description": "Name of subaccount",
+                    "type": "string",
+                    "default": "Company XYZ"
+                  },
+                  "usagelimit": {
+                    "description": "The usage limit for the subaccount.",
+                    "type": "integer",
+                    "default": 3423432400
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The updated subaccount",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Number"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"secret\": \"D81DEF1B65E19A83DBCEA0BE0D89D082\",\n  \"created\": \"2014-12-08T13:18:07.625000\",\n  \"usagelimit\": 99999999999,\n  \"id\": \"af3d05a159669e1951c5301bc6a61bac\",\n  \"name\": \"This Co\",\n  \"usage\": 12300\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Subaccount not found",
+            "content": {
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Not found"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Calls": {
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "List latest 100 Calls",
+        "parameters": [
+          {
+            "name": "start",
+            "in": "query",
+            "description": "Show objects older than this date on format 2016-01-01T00:00:00.000",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "Show objects newer than this date on format 2016-01-01T00:00:00.000",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of objects to fetch",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100
+            }
+          }
+        ],
+        "tags": [
+          "Calls"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of products",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CallsHistory"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"data\": [\n    {\n      \"direction\": \"outgoing\",\n      \"from\": \"+46766861004\",\n      \"created\": \"2016-11-03T15:08:14.609000\",\n      \"to\": \"+46766861004\",\n      \"state\": \"failed\",\n      \"id\": \"c719b1eefbf65b1f89c013e6433dbf537\"\n    },\n    {\n      \"direction\": \"incoming\",\n      \"from\": \"+46766861004\",\n      \"to\": \"+46101994214\",\n      \"created\": \"2016-11-03T09:24:24.355000\",\n      \"actions\": [\n        {\n          \"connect\": \"+4633090510\",\n          \"result\": \"success\"\n        }\n      ],\n      \"start\": \"2016-11-03T09:24:24.333000\",\n      \"state\": \"success\",\n      \"cost\": 1500,\n      \"duration\": 15,\n      \"legs\": [\n        {\n          \"duration\": 14,\n          \"to\": \"+4634090510\",\n          \"state\": \"success\",\n          \"from\": \"+46766861004\"\n        }\n      ],\n      \"id\": \"c595183c042b1e43d1c8e79b9fd5cbcab\"\n    }\n  ]\n}\n"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Calls"
+        ],
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Start Phonecall",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "from": {
+                    "description": "Your 46elks number like +46766861647.",
+                    "type": "string",
+                    "default": "TestElk"
+                  },
+                  "to": {
+                    "description": "Number in e164 number like +46766861004.",
+                    "type": "string",
+                    "default": "+46766861004"
+                  },
+                  "voice_start": {
+                    "description": "The JSON data for the call or URL to access when the call is awnserd.",
+                    "type": "string",
+                    "default": "Hi! This is your message."
+                  },
+                  "whenhangup": {
+                    "description": "Url to send call data to when call ends.",
+                    "type": "string",
+                    "default": "http://yourserver/"
+                  },
+                  "timeout": {
+                    "description": "Secounds to wait before stopping call.",
+                    "type": "integer",
+                    "default": 25
+                  }
+                },
+                "required": [
+                  "from",
+                  "to",
+                  "voice_start"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The metadata for the started call.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Callstart"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"direction\": \"outgoing\",\n  \"from\": \"+46766861004\",\n  \"created\": \"2016-11-03T15:08:14.609873\",\n  \"to\": \"+46766861004\",\n  \"state\": \"ongoing\",\n  \"id\": \"c719b1eefbf65b1f89c013e6433dbf537\"\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Error making call",
+            "content": {
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Not enough credits to initiate call"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Calls/{id}": {
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Get one Call.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of call to get",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "c70df59406a1b4643b96f3f10e1bfb7b1"
+            }
+          }
+        ],
+        "tags": [
+          "Calls"
+        ],
+        "responses": {
+          "200": {
+            "description": "The Call metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Calls"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"direction\": \"incoming\",\n  \"from\": \"+46766861004\",\n  \"to\": \"+46101994214\",\n  \"created\": \"2016-11-03T09:24:24.355000\",\n  \"actions\": [\n    {\n      \"connect\": \"+4634090510\",\n      \"result\": \"success\"\n    }\n  ],\n  \"start\": \"2016-11-03T09:24:24.333000\",\n  \"state\": \"success\",\n  \"cost\": 1500,\n  \"duration\": 15,\n  \"legs\": [\n    {\n      \"duration\": 14,\n      \"to\": \"+4634090510\",\n      \"state\": \"success\",\n      \"from\": \"+46766861004\"\n    }\n  ],\n  \"id\": \"c595183c042b1e43d1c8e79b9fd5cbcab\"\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Unable to get call data."
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Delete Call from history",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of Call to delete",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "c70df59406a1b4643b96f3f10e1bfb7b1"
+            }
+          }
+        ],
+        "tags": [
+          "Calls"
+        ],
+        "responses": {
+          "200": {
+            "description": "The deleted Call",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeletedCall"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"id\": \"c70df59406a1b4643b96f3f10e1bfb7b1\",\n  \"deleted\": \"2018-06-25T08:40:22.109482\"\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Unable to delete call."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/recordings": {
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Get list of recordings",
+        "tags": [
+          "Calls"
+        ],
+        "parameters": [
+          {
+            "name": "start",
+            "in": "query",
+            "description": "Show objects older than this date on format 2016-01-01T00:00:00.000",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "Show objects newer than this date on format 2016-01-01T00:00:00.000",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of objects to fetch",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of recordings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecordingsList"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"data\": [\n    {\n      \"duration\": 1,\n      \"id\": \"c361e5927d2c4d7dcf71a142dc0ec6d9b-r0\",\n      \"created\": \"2016-02-28T23:54:57.075000\"\n    },\n    {\n      \"duration\": 2,\n      \"id\": \"c110cf16e8a0e202b7efb345ba4571d2d-r0\",\n      \"created\": \"2015-02-24T15:09:08.146000\"\n    }\n  ]\n}\n"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/recordings/{id}": {
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Get metadata of one recording.",
+        "tags": [
+          "Calls"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the recording",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "c814b5dd6ac2b5881834b710a1dedcad3-r0"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The metadata for the recording",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Recording"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n    \"duration\": 15,\n    \"id\": \"c361e5927d2c4d7dcf71a142dc0ec6d9b-r0\",\n    \"created\": \"2016-02-28T23:54:57.075000\"\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recording not found",
+            "content": {
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Not found"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/recordings/{id}.wav": {
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Get recodring soundfile.",
+        "tags": [
+          "Calls"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the recording",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "c814b5dd6ac2b5881834b710a1dedcad3-r0"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The sound file of the recording",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "examples": {
+                  "response": {
+                    "value": null
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recording file not found",
+            "content": {
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Not found"
+                  }
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Recording not ready yet",
+            "content": {
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Retry after a short while. Audio media not yet available."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/numbers": {
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Get all numbers allocated in the API",
+        "tags": [
+          "Numbers"
+        ],
+        "parameters": [
+          {
+            "name": "start",
+            "in": "query",
+            "description": "Show objects older than this date on format 2016-01-01T00:00:00.000",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "Show objects newer than this date on format 2016-01-01T00:00:00.000",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of objects to fetch",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of the phone numbers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NumberList"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"data\": [\n    {\n      \"id\": \"n53c05a4e002ae26f790cbaf82b93bc37\",\n      \"category\": \"mobile\",\n      \"country\": \"se\",\n      \"expires\": \"2016-12-01T07:52:15\",\n      \"voice_start\": \"https://www.example.com/incomingcall\",\n      \"number\": \"+46766861475\",\n      \"capabilities\": [\n        \"sms\",\n        \"voice\"\n      ],\n      \"sms_replies\": \"yes\",\n      \"active\": \"yes\"\n    },\n    {\n      \"id\": \"n53c05a4e002ae26f790cbaf82b93bc38\",\n      \"category\": \"mobile\",\n      \"country\": \"se\",\n      \"expires\": \"2016-12-01T07:52:15\",\n      \"sms_url\": \"https://www.example.com/incomingcall\",\n      \"number\": \"+46766861476\",\n      \"capabilities\": [\n        \"sms\",\n        \"voice\",\n        \"mms\"\n      ],\n      \"active\": \"yes\"\n    }\n  ]\n}\n"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "Numbers"
+        ],
+        "description": "Allocate new number for usage in the API.",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "country": {
+                    "description": "country",
+                    "type": "string",
+                    "default": "se"
+                  },
+                  "capabilities": {
+                    "description": "SMS, MMS, Voice",
+                    "type": "string",
+                    "default": "sms,voice"
+                  },
+                  "sms_url": {
+                    "description": "Url where to send incoming sms. Set to \"none\" to clear.",
+                    "type": "string",
+                    "default": "http://www.server.com/incomingsms"
+                  },
+                  "mms_url": {
+                    "description": "Url where to send incoming MMS. Set to \"none\" to clear.",
+                    "type": "string",
+                    "default": "http://www.server.com/incomingmms"
+                  },
+                  "voice_start": {
+                    "description": "Url / JSON where to send incoming calls. Set to \"none\" to clear.",
+                    "type": "string",
+                    "default": "http://www.server.com/incomingcall"
+                  },
+                  "sms_replies": {
+                    "description": "Prevent automatic response from callback server.",
+                    "type": "string",
+                    "default": "yes"
+                  }
+                },
+                "required": [
+                  "country"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Number allocated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Number"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"id\": \"n53c05a4e002ae26f790cbaf82b93bc37\",\n  \"category\": \"mobile\",\n  \"country\": \"se\",\n  \"expires\": \"2016-12-01T07:52:15\",\n  \"voice_start\": \"https://www.example.com/incomingcall\",\n  \"number\": \"+46766861475\",\n  \"capabilities\": [\n    \"sms\",\n    \"voice\"\n  ],\n  \"sms_replies\": \"yes\",\n  \"active\": \"yes\"\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unable to allocate number",
+            "content": {
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Not found"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/numbers/{id}": {
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Get information about one number.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the number",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "n70df59406a1b4643b96f3f10e1bfb7b1"
+            }
+          }
+        ],
+        "tags": [
+          "Numbers"
+        ],
+        "responses": {
+          "200": {
+            "description": "The number information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Number"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"id\": \"n53c05a4e002ae26f790cbaf82b93bc37\",\n  \"category\": \"mobile\",\n  \"country\": \"se\",\n  \"expires\": \"2016-12-01T07:52:15\",\n  \"voice_start\": \"https://www.example.com/incomingcall\",\n  \"number\": \"+46766861475\",\n  \"capabilities\": [\n    \"sms\",\n    \"voice\"\n  ],\n  \"sms_replies\": \"yes\",\n  \"active\": \"yes\"\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Number not found",
+            "content": {
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Not found"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Change parameters of number",
+        "tags": [
+          "Numbers"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Number id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "n53c05a4e002ae26f790cbaf82b93bc37"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sms_url": {
+                    "description": "Url where to send incoming messages.",
+                    "type": "string",
+                    "default": "http://www.server.com/incomingsms"
+                  },
+                  "voice_start": {
+                    "description": "Url / JSON where to send incoming calls.",
+                    "type": "string",
+                    "default": "http://www.server.com/incomingcall"
+                  },
+                  "mms_url": {
+                    "description": "Url where to send incoming MMS.",
+                    "type": "string",
+                    "default": "http://www.server.com/incomingmms"
+                  },
+                  "sms_replies": {
+                    "description": "Prevent automatic response from callback server.",
+                    "type": "string",
+                    "default": "yes"
+                  },
+                  "active": {
+                    "description": "Is the number currently active (yes/no).",
+                    "type": "string",
+                    "default": "yes, (setting this to no is irreversible)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Number updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Number"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"id\": \"n53c05a4e002ae26f790cbaf82b93bc37\",\n  \"category\": \"mobile\",\n  \"country\": \"se\",\n  \"expires\": \"2016-12-01T07:52:15\",\n  \"voice_start\": \"https://www.example.com/incomingcall\",\n  \"number\": \"+46766861475\",\n  \"capabilities\": [\n    \"sms\",\n    \"voice\"\n  ],\n  \"sms_replies\": \"yes\",\n  \"active\": \"yes\"\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Unable to change number."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SMS": {
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "List latest 100 SMS",
+        "parameters": [
+          {
+            "name": "start",
+            "in": "query",
+            "description": "Show objects older than this date on format 2016-01-01T00:00:00.000",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "Show objects newer than this date on format 2016-01-01T00:00:00.000",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of objects to fetch",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100
+            }
+          }
+        ],
+        "tags": [
+          "SMS"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of SMS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SMSHistory"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"data\": [\n    {\n      \"id\": \"s70df59406a1b4643b96f3f91e0bfb7b0\",\n      \"from\": \"Lasse\",\n      \"to\": \"+46766861004\",\n      \"message\": \"This is the message sent to the phone.\",\n      \"created\": \"2016-10-11T13:36:13.081000\",\n      \"cost\": 3500,\n      \"direction\": \"outgoing\"\n    },\n    {\n      \"id\": \"s3633fa8e62f823e52fbc67ebf6925ab5\",\n      \"direction\": \"incoming\",\n      \"from\": \"Martin\",\n      \"created\": \"2016-08-18T09:55:31.116000\",\n      \"to\": \"+46766861475\",\n      \"message\": \"TEst 32423\"\n    }\n  ]\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Unable to get messages."
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SMS"
+        ],
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Send SMS",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "from": {
+                    "description": "Senderid like Elks (3-11 chars a-Z and 0-9 starting with a char), or a 46elks number like +46766861004 or a unlocked from number like your own number +46766861004.",
+                    "type": "string",
+                    "default": "TestElk"
+                  },
+                  "to": {
+                    "description": "Number in e164 number like +46766861004 or in local format for AU,CA,DK,FI,IN,NO,SE and US prefix with country code like SE0723175800",
+                    "type": "string",
+                    "default": "+46766861004"
+                  },
+                  "message": {
+                    "description": "Text to send to the phone.",
+                    "type": "string",
+                    "default": "Hi! This is your message."
+                  },
+                  "whendelivered": {
+                    "description": "Url to send the Delivery report to",
+                    "type": "string",
+                    "default": "http://yourserver/"
+                  },
+                  "flashsms": {
+                    "description": "Do not store message on the phone.",
+                    "type": "string",
+                    "default": "no"
+                  },
+                  "dryrun": {
+                    "description": "Do not send the message, get price estimation and verify parameters.",
+                    "type": "string",
+                    "default": "no"
+                  },
+                  "dontlog": {
+                    "description": "Do not store data about SMS in the API platform, set to \"message\" to hide message content.",
+                    "type": "string",
+                    "default": "none"
+                  }
+                },
+                "required": [
+                  "from",
+                  "to",
+                  "message"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SMS data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SMS"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"id\": \"s70df59406a1b4643b96f3f91e0bfb7b0\",\n  \"from\": \"Lasse\",\n  \"to\": \"+46766861004\",\n  \"message\": \"This is the message sent to the phone.\",\n  \"created\": \"2016-10-11T13:36:13.081000\",\n  \"cost\": 3500,\n  \"direction\": \"outgoing\"\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error sending SMS",
+            "content": {
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Not enough credits on your account to send this SMS"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SMS/{id}": {
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Get one SMS.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of SMS to get",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "s70df59406a1b4643b96f3f10e1bfb7b1"
+            }
+          }
+        ],
+        "tags": [
+          "SMS"
+        ],
+        "responses": {
+          "200": {
+            "description": "The SMS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SMS"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"id\": \"s3633fa8e62f823e52fbc67ebf6925ab5\",\n  \"direction\": \"incoming\",\n  \"from\": \"Martin\",\n  \"created\": \"2016-08-18T09:55:31.116000\",\n  \"to\": \"+46766861475\",\n  \"message\": \"TEst 32423\"\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "SMS not found",
+            "content": {
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Not found"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Delete SMS",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of SMS to get",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "s70df59406a1b4643b96f3f10e1bfb7b1"
+            }
+          }
+        ],
+        "tags": [
+          "SMS"
+        ],
+        "responses": {
+          "200": {
+            "description": "The Deleted SMS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeletedSMS"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"id\": \"s70df59406a1b4643b96f3f10e1bfb7b1\",\n  \"deleted\": \"2018-06-25T08:40:22.109482\"\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "SMS not found",
+            "content": {
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Not found"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/MMS": {
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "List latest 100 MMS",
+        "parameters": [
+          {
+            "name": "start",
+            "in": "query",
+            "description": "Show objects older than this date on format 2016-01-01T00:00:00.000",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "Show objects newer than this date on format 2016-01-01T00:00:00.000",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of objects to fetch",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100
+            }
+          }
+        ],
+        "tags": [
+          "MMS"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of MMS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MMSHistory"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"data\": [\n    {\n      \"id\": \"m70df59406a1b4643b96f3f91e0bfb7b0\",\n      \"from\": \"Lasse\",\n      \"to\": \"+46766861004\",\n      \"message\": \"This is the message sent to the phone.\",\n      \"created\": \"2016-10-11T13:36:13.081000\",\n      \"cost\": 12500,\n      \"direction\": \"outgoing\",\n      \"images\": [\n        \"m70df59406a1b4643b96f3f91e0bfb7b0-i0\"\n      ]\n    },\n    {\n      \"id\": \"m3633fa8e62f823e52fbc67ebf6925ab5\",\n      \"direction\": \"incoming\",\n      \"from\": \"Martin\",\n      \"created\": \"2016-08-18T09:55:31.116000\",\n      \"to\": \"+46766861475\",\n      \"message\": \"TEst 32423\",\n      \"images\": [\n        \"m70df59406a1b4643b96f3f91e0bfb7b0-i0\"\n      ]\n    }\n  ]\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Unable to get messages."
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Send MMS",
+        "tags": [
+          "MMS"
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "from": {
+                    "description": "\"noreply\" or number like +46766861004.",
+                    "type": "string",
+                    "default": "TestElk"
+                  },
+                  "to": {
+                    "description": "Number in E.164 number like +46766861004.",
+                    "type": "string",
+                    "default": "+46766861004"
+                  },
+                  "message": {
+                    "description": "Text to send to the phone.",
+                    "type": "string",
+                    "default": "Hi! This is your message."
+                  },
+                  "image": {
+                    "description": "Url or Base64/url-encoded imagedata to send.",
+                    "type": "string",
+                    "default": "http://yourserver/image.png"
+                  }
+                },
+                "required": [
+                  "from",
+                  "to",
+                  "message"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "MMS object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MMS"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"direction\": \"outgoing\",\n  \"from\": \"+46766861218\",\n  \"created\": \"2016-11-03T12:44:56.180704\",\n  \"to\": \"+46766861004\",\n  \"cost\": 12500,\n  \"owner\": \"u5a0588130b2bfe9dec437a4df1056d15\",\n  \"message\": \"Hej!\",\n  \"id\": \"mf3d05c159aa49e1951c5301bc6af1bac\"\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "The message was not sent."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/MMS/{id}": {
+      "delete": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Delete MMS",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of MMS to get",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "m70df59406a1b4643b96f3f10e1bfb7b1"
+            }
+          }
+        ],
+        "tags": [
+          "MMS"
+        ],
+        "responses": {
+          "200": {
+            "description": "The deleted MMS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeletedMMS"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"id\": \"m70df59406a1b4643b96f3f10e1bfb7b1\",\n  \"deleted\": \"2018-06-25T08:40:22.109482\"\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "MMS not found",
+            "content": {
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Not found"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Get one MMS.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of MMS to get",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "s70df59406a1b4643b96f3f10e1bfb7b1"
+            }
+          }
+        ],
+        "tags": [
+          "MMS"
+        ],
+        "responses": {
+          "200": {
+            "description": "The MMS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MMS"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"id\": \"m84af96809ff8989f3668c93aaaedb69c\",\n  \"direction\": \"incoming\",\n  \"from\": \"+46766861004\",\n  \"created\": \"2016-08-18T09:55:31.116000\",\n  \"to\": \"+46766861475\",\n  \"message\": \"Message text.\",\n  \"images\": [\n    \"m84af96809ff8989f3668c93aaaedb69c-i0\"\n  ]\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "MMS not found",
+            "content": {
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Not found"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/images": {
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Get image list",
+        "tags": [
+          "MMS"
+        ],
+        "parameters": [
+          {
+            "name": "start",
+            "in": "query",
+            "description": "Show objects older than this date on format 2016-01-01T00:00:00.000",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "Show objects newer than this date on format 2016-01-01T00:00:00.000",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of objects to fetch",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of images",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImagesList"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"data\": [\n    {\n      \"created\": \"2016-11-03T12:44:56.190000\",\n      \"filetype\": \"jpg\",\n      \"mmsid\": \"mf3d05c159aa49e1951c5301bc6af1bac\",\n      \"bytes\": 4200,\n      \"id\": \"mf3d05c159aa49e1951c5301bc6af1bac-i0\",\n      \"digest\": \"6f15a43f350b49a02e6cdb0dd1863feeaa9f2fc4\"\n    },\n    {\n      \"created\": \"2016-11-03T12:30:18.964000\",\n      \"filetype\": \"png\",\n      \"mmsid\": \"m84af96809ff8989f3668c93aaaedb69c\",\n      \"bytes\": 206210,\n      \"id\": \"m84af96809ff8989f3668c93aaaedb69c-i0\",\n      \"digest\": \"c7e02bad59c63f8616fda84ac1ef689d017fa906\"\n    }\n  ]\n}\n"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/images/{id}": {
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Get metadata of one image.",
+        "tags": [
+          "MMS"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the image.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "m84af96809ff8989f3668c93aaaedb69c-i0"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The metadata for the image",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Image"
+                },
+                "examples": {
+                  "response": {
+                    "value": "{\n  \"created\": \"2016-11-03T12:30:18.964000\",\n  \"filetype\": \"jpg\",\n  \"mmsid\": \"m84af96809ff8989f3668c93aaaedb69c\",\n  \"bytes\": 206210,\n  \"id\": \"m84af96809ff8989f3668c93aaaedb69c-i0\",\n  \"digest\": \"c7e02bad59c63f8616fda84ac1ef689d017fa906\"\n}\n"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Image not found",
+            "content": {
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Not found"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/images/{id}.jpg": {
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "description": "Get image file",
+        "tags": [
+          "MMS"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the image",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "m84af96809ff8989f3668c93aaaedb69c-i0"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The image data",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "examples": {
+                  "response": {
+                    "value": null
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Image file not found",
+            "content": {
+              "text/plain; charset=utf-8": {
+                "examples": {
+                  "response": {
+                    "value": "Not found"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
+  },
+  "servers": [
+    {
+      "url": "https://api.46elks.com/a1"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "description": "HTTP Basic Authentication is used for all API calls.",
+        "scheme": "basic"
+      }
+    },
+    "schemas": {
+      "RecordingsList": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Recording"
+            }
+          }
+        }
+      },
+      "Recording": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0"
+          },
+          "duration": {
+            "type": "integer",
+            "description": "15"
+          },
+          "created": {
+            "type": "string",
+            "description": "2016-02-28T23:54:57.075Z"
+          }
+        }
+      },
+      "NumberList": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Number"
+            }
+          }
+        }
+      },
+      "Number": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "n70df59406a1b4643b96f3f91e0bfb7b0"
+          },
+          "country": {
+            "type": "string",
+            "description": "se"
+          },
+          "expires": {
+            "type": "string",
+            "description": "2016-12-01T07:52:15.000Z"
+          },
+          "voice_start": {
+            "type": "string",
+            "description": "https://yourserver/hooks/x"
+          },
+          "sms_url": {
+            "type": "string",
+            "description": "https://yourserver/hooks/x"
+          },
+          "mms_url": {
+            "type": "string",
+            "description": "https://yourserver/hooks/x"
+          },
+          "number": {
+            "type": "string",
+            "description": "+46766861475"
+          },
+          "capabilities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "sms, voice, mms"
+          },
+          "sms_replies": {
+            "type": "string",
+            "description": "yes/no"
+          },
+          "active": {
+            "type": "string",
+            "description": "yes/no"
+          },
+          "category": {
+            "type": "string",
+            "description": "mobile"
+          }
+        }
+      },
+      "SMSHistory": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SMS"
+            }
+          }
+        }
+      },
+      "DeletedMMS": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "m70df59406a1b4643b96f3f91e0bfb7b0"
+          },
+          "deleted": {
+            "type": "string",
+            "description": "2018-06-25T08:40:22.109Z"
+          }
+        }
+      },
+      "DeletedCall": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "c70df59406a1b4643b96f3f91e0bfb7b0"
+          },
+          "deleted": {
+            "type": "string",
+            "description": "2018-06-25T08:40:22.109Z"
+          }
+        }
+      },
+      "DeletedSMS": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "s70df59406a1b4643b96f3f91e0bfb7b0"
+          },
+          "deleted": {
+            "type": "string",
+            "description": "2018-06-25T08:40:22.109Z"
+          }
+        }
+      },
+      "SMS": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "s70df59406a1b4643b96f3f91e0bfb7b0"
+          },
+          "direction": {
+            "type": "string",
+            "description": "outgoing"
+          },
+          "from": {
+            "type": "string",
+            "description": "Lasse"
+          },
+          "to": {
+            "type": "string",
+            "description": "+46766861004"
+          },
+          "message": {
+            "type": "string",
+            "description": "test"
+          },
+          "created": {
+            "type": "string",
+            "description": "2016-10-11T13:36:08.951Z"
+          },
+          "cost": {
+            "type": "integer",
+            "description": "3500"
+          },
+          "status": {
+            "type": "string",
+            "description": "delivered"
+          },
+          "delivered": {
+            "type": "string",
+            "description": "2016-10-11T13:36:13.081Z"
+          },
+          "flashsms": {
+            "type": "string",
+            "description": "yes"
+          }
+        }
+      },
+      "Callstart": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "type": "string",
+            "description": "outgoing"
+          },
+          "from": {
+            "type": "string",
+            "description": "+46766861004"
+          },
+          "created": {
+            "type": "string",
+            "description": "2016-11-03T15:08:14.609Z"
+          },
+          "to": {
+            "type": "string",
+            "description": "+46766861004"
+          },
+          "state": {
+            "type": "string",
+            "description": "ongoing"
+          },
+          "id": {
+            "type": "string",
+            "description": "c719b1eefbf65b1f89c013e6433dbf537"
+          }
+        }
+      },
+      "CallsHistory": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Calls"
+            }
+          }
+        }
+      },
+      "Calls": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "c595183c042b1e43d1c8e79b9fd5cbcab"
+          },
+          "direction": {
+            "type": "string",
+            "description": "incoming"
+          },
+          "from": {
+            "type": "string",
+            "description": "+46766861004"
+          },
+          "to": {
+            "type": "string",
+            "description": "+46101994214"
+          },
+          "legs": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "List of all call parts."
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "Array of actions taken by the 46elks API"
+          },
+          "start": {
+            "type": "string",
+            "description": "2016-11-03T09:24:24.333Z"
+          },
+          "state": {
+            "type": "string",
+            "description": "success"
+          },
+          "created": {
+            "type": "string",
+            "description": "2016-10-11T13:36:08.951Z"
+          },
+          "cost": {
+            "type": "integer",
+            "description": "1500"
+          },
+          "duration": {
+            "type": "integer",
+            "description": "15"
+          }
+        }
+      },
+      "MMSHistory": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MMS"
+            }
+          }
+        }
+      },
+      "MMS": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "s70df59406a1b4643b96f3f91e0bfb7b0"
+          },
+          "direction": {
+            "type": "string",
+            "description": "outgoing"
+          },
+          "from": {
+            "type": "string",
+            "description": "+46766861004"
+          },
+          "to": {
+            "type": "string",
+            "description": "+46766861004"
+          },
+          "message": {
+            "type": "string",
+            "description": "test"
+          },
+          "created": {
+            "type": "string",
+            "description": "2016-10-11T13:36:08.951Z"
+          },
+          "cost": {
+            "type": "integer",
+            "description": "3500"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "m84af96809ff8989f3668c93aaaedb69c-i0"
+          }
+        }
+      },
+      "ImagesList": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Image"
+            }
+          }
+        }
+      },
+      "Image": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "mf3d05c159aa49e1951c5301bc6af1bac-i0"
+          },
+          "digest": {
+            "type": "string",
+            "description": "6f15a43f350b49a02e6cdb0dd1863feeaa9f2fc4"
+          },
+          "created": {
+            "type": "string",
+            "description": "2016-11-03T12:44:56.190Z"
+          },
+          "filetype": {
+            "type": "string",
+            "description": "jpg"
+          },
+          "mmsid": {
+            "type": "string",
+            "description": "mf3d05c159aa49e1951c5301bc6af1bac"
+          },
+          "bytes": {
+            "type": "integer",
+            "description": "42"
+          }
+        }
+      },
+      "SubaccountsList": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Subaccount"
+            }
+          }
+        }
+      },
+      "Subaccount": {
+        "type": "object",
+        "properties": {
+          "usage": {
+            "type": "integer",
+            "description": "10000"
+          },
+          "id": {
+            "type": "string",
+            "description": "af3d05a159669e1951c5301bc6a61bac"
+          },
+          "secret": {
+            "type": "string",
+            "description": "D81DEF1B65E19A83DBCEA0BE0D89D082"
+          },
+          "created": {
+            "type": "string",
+            "description": "2016-11-03T12:44:56.190Z"
+          },
+          "usagelimit": {
+            "type": "integer",
+            "description": "99999999999"
+          },
+          "name": {
+            "type": "string",
+            "description": "This Co"
+          }
+        }
+      },
+      "Account": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "u5a9566c072160c398445d163949bf505"
+          },
+          "mobilenumber": {
+            "type": "string",
+            "description": "+46766861004"
+          },
+          "balance": {
+            "type": "integer",
+            "description": "9670500"
+          },
+          "creditalert": {
+            "type": "integer",
+            "description": "200000"
+          },
+          "currency": {
+            "type": "string",
+            "description": "SEK / EUR"
+          },
+          "email": {
+            "type": "string",
+            "description": "yourname@example.com"
+          },
+          "displayname": {
+            "type": "string",
+            "description": "Your Company Name"
+          }
+        }
+      },
+      "Error": {
+        "type": "string"
+      }
+    }
+  }
 }
-
