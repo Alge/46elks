@@ -15,7 +15,7 @@
                 "summary": "Get Me",
                 "description": "Get your account data",
                 "operationId": "GetMe",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [],
                 "responses": {
                     "200": {
@@ -34,7 +34,7 @@
                 "summary": "Post Me",
                 "description": "Set level for when credit alert e-mail to be sent",
                 "operationId": "PostMe",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "creditalert",
@@ -61,7 +61,7 @@
                 "summary": "Get Subaccounts",
                 "description": "Get all subaccounts",
                 "operationId": "GetSubaccounts",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [],
                 "responses": {
                     "200": {
@@ -80,7 +80,7 @@
                 "summary": "Post Subaccounts",
                 "description": "Create new subaccount.",
                 "operationId": "PostSubaccounts",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "name",
@@ -112,7 +112,7 @@
                 "summary": "Get Subaccounts",
                 "description": "Get the data about one subaccount.",
                 "operationId": "GetSubaccountsId",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "id",
@@ -137,7 +137,7 @@
                 "summary": "Post Subaccounts",
                 "description": "Update subaccount.",
                 "operationId": "PostSubaccountsId",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "id",
@@ -174,7 +174,7 @@
                 "summary": "Get Images",
                 "description": "Get image list",
                 "operationId": "GetImages",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "start",
@@ -206,7 +206,7 @@
                 "summary": "Get Images",
                 "description": "Get metadata of one image.",
                 "operationId": "GetImagesId",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "id",
@@ -233,7 +233,7 @@
                 "summary": "Get Images",
                 "description": "Get image file",
                 "operationId": "GetImagesIdJpg",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "id",
@@ -260,7 +260,7 @@
                 "summary": "Get Recordings",
                 "description": "Get list of recordings",
                 "operationId": "GetRecordings",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "start",
@@ -292,7 +292,7 @@
                 "summary": "Get Recordings",
                 "description": "Get metadata of one recording.",
                 "operationId": "GetRecordingsId",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "id",
@@ -319,7 +319,7 @@
                 "summary": "Get Recordings",
                 "description": "Get recodring soundfile.",
                 "operationId": "GetRecordingsIdWav",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "id",
@@ -346,7 +346,7 @@
                 "summary": "Get Numbers",
                 "description": "Get all numbers allocated in the API",
                 "operationId": "GetNumbers",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [],
                 "responses": {
                     "200": {
@@ -365,7 +365,7 @@
                 "summary": "Post Numbers",
                 "description": "Allocate new number for usage in the API.",
                 "operationId": "PostNumbers",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "country",
@@ -417,7 +417,7 @@
                 "summary": "Get Numbers",
                 "description": "Get information about one number.",
                 "operationId": "GetNumbersId",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "id",
@@ -442,7 +442,7 @@
                 "summary": "Post Numbers",
                 "description": "Change parameters of number",
                 "operationId": "PostNumbersId",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "id",
@@ -494,7 +494,7 @@
                 "summary": "Post Calls",
                 "description": "Start Phonecall",
                 "operationId": "PostCalls",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "from",
@@ -539,7 +539,7 @@
                 "summary": "Get Calls",
                 "description": "List latest 100 Calls",
                 "operationId": "GetCalls",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "start",
@@ -571,7 +571,7 @@
                 "summary": "Delete Calls",
                 "description": "Delete Call from history",
                 "operationId": "DeleteCallsId",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "id",
@@ -581,11 +581,11 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "The account data",
+                        "description": "The call history",
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
+                                    "$href": "#\/components\/schemas\/Call"
                                 }
                             }
                         }
@@ -596,21 +596,21 @@
                 "summary": "Get Calls",
                 "description": "Get one Call.",
                 "operationId": "GetCallsId",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
-                        "description": "Id of the subaccount"
+                        "description": "Id of the call"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "The account data",
+                        "description": "The call data",
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
+                                    "$href": "#\/components\/schemas\/Call"
                                 }
                             }
                         }
@@ -623,12 +623,12 @@
                 "summary": "Post SMS",
                 "description": "Send SMS",
                 "operationId": "PostSms",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "from",
                         "in": "formData",
-                        "description": "Your 46elks umber like +46766861647."
+                        "description": "Your 46elks number like +46766861647."
                     },
                     {
                         "name": "to",
@@ -648,7 +648,7 @@
                     {
                         "name": "flashsms",
                         "in": "formData",
-                        "description": "Do not store message on the phone."
+                        "description": "Send as a flash SMS."
                     },
                     {
                         "name": "dryrun",
@@ -663,11 +663,11 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "The account data",
+                        "description": "The SMS data",
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
+                                    "$href": "#\/components\/schemas\/SMS"
                                 }
                             }
                         }
@@ -678,26 +678,26 @@
                 "summary": "Get SMS",
                 "description": "List latest 100 SMS",
                 "operationId": "GetSms",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "start",
                         "in": "query",
-                        "description": "Show images older than this date."
+                        "description": "Show SMS older than this date."
                     },
                     {
                         "name": "end",
                         "in": "query",
-                        "description": "Show images newer than this date."
+                        "description": "Show SMS newer than this date."
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "The account data",
+                        "description": "The SMS data",
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
+                                    "$href": "#\/components\/schemas\/SMSHistory"
                                 }
                             }
                         }
@@ -710,21 +710,21 @@
                 "summary": "Delete SMS",
                 "description": "Delete SMS",
                 "operationId": "DeleteSmsId",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
-                        "description": "Id of the subaccount"
+                        "description": "Id of the SMS"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "The account data",
+                        "description": "The SMS data",
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
+                                    "$href": "#\/components\/schemas\/DeletedSMS"
                                 }
                             }
                         }
@@ -735,21 +735,21 @@
                 "summary": "Get SMS",
                 "description": "Get one SMS.",
                 "operationId": "GetSmsId",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
-                        "description": "Id of the subaccount"
+                        "description": "Id of the SMS"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "The account data",
+                        "description": "The SMS data",
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
+                                    "$href": "#\/components\/schemas\/SMS"
                                 }
                             }
                         }
@@ -762,22 +762,22 @@
                 "summary": "Post MMS",
                 "description": "Send MMS",
                 "operationId": "PostMms",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "from",
                         "in": "formData",
-                        "description": "Your 46elks umber like +46766861647."
+                        "description": "Your mms enabled 46elks number like +46766861647 or the string 'noreply'."
                     },
                     {
                         "name": "to",
                         "in": "formData",
-                        "description": "Number in e164 number like +46723175800."
+                        "description": "Number in e164 number like +46766861004."
                     },
                     {
                         "name": "message",
                         "in": "formData",
-                        "description": "Text to send to the phone."
+                        "description": "Text to send in the MMS."
                     },
                     {
                         "name": "image",
@@ -787,11 +787,11 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "The account data",
+                        "description": "The MMS data",
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
+                                    "$href": "#\/components\/schemas\/MMS"
                                 }
                             }
                         }
@@ -802,7 +802,7 @@
                 "summary": "Get MMS",
                 "description": "List latest 100 MMS",
                 "operationId": "GetMms",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "start",
@@ -817,11 +817,11 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "The account data",
+                        "description": "The MMS data",
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
+                                    "$href": "#\/components\/schemas\/MMS"
                                 }
                             }
                         }
@@ -834,21 +834,21 @@
                 "summary": "Delete MMS",
                 "description": "Delete MMS",
                 "operationId": "DeleteMmsId",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
-                        "description": "Id of the subaccount"
+                        "description": "Id of the MMS"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "The account data",
+                        "description": "The MMS data",
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
+                                    "$href": "#\/components\/schemas\/DeletedMMS"
                                 }
                             }
                         }
@@ -859,21 +859,21 @@
                 "summary": "Get MMS",
                 "description": "Get one MMS.",
                 "operationId": "GetMmsId",
-                "deprecated": 0,
+                "deprecated": false,
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
-                        "description": "Id of the subaccount"
+                        "description": "Id of the MMS"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "The account data",
+                        "description": "The MMS data",
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$href": "#\/components\/schemas\/Account"
+                                    "$href": "#\/components\/schemas\/MMS"
                                 }
                             }
                         }
@@ -1075,7 +1075,7 @@
                         "type": "string"
                     },
                     "from": {
-                        "description": "Lasse",
+                        "description": "+46766861004",
                         "type": "string"
                     },
                     "created": {
@@ -1083,7 +1083,7 @@
                         "type": "string"
                     },
                     "to": {
-                        "description": "+46723175800",
+                        "description": "+46766861004",
                         "type": "string"
                     },
                     "state": {
@@ -1091,7 +1091,7 @@
                         "type": "string"
                     },
                     "id": {
-                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b",
                         "type": "string"
                     }
                 }
@@ -1109,7 +1109,7 @@
                 "type": "object",
                 "properties": {
                     "id": {
-                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b",
                         "type": "string"
                     },
                     "direction": {
@@ -1117,11 +1117,11 @@
                         "type": "string"
                     },
                     "from": {
-                        "description": "Lasse",
+                        "description": "+46766861004",
                         "type": "string"
                     },
                     "to": {
-                        "description": "+46723175800",
+                        "description": "+46766761004",
                         "type": "string"
                     },
                     "legs": {
@@ -1173,7 +1173,7 @@
                 "type": "object",
                 "properties": {
                     "id": {
-                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "description": "m84af96809ff8989f3668c93aaaedb69",
                         "type": "string"
                     },
                     "direction": {
@@ -1181,11 +1181,11 @@
                         "type": "string"
                     },
                     "from": {
-                        "description": "Lasse",
+                        "description": "+46701234567",
                         "type": "string"
                     },
                     "to": {
-                        "description": "+46723175800",
+                        "description": "+46766861004",
                         "type": "string"
                     },
                     "message": {
@@ -1222,7 +1222,7 @@
                 "type": "object",
                 "properties": {
                     "id": {
-                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "description": "m84af96809ff8989f3668c93aaaedb69c-i0",
                         "type": "string"
                     },
                     "digest": {
@@ -1235,10 +1235,10 @@
                     },
                     "filetype": {
                         "description": "jpg",
-                        "type": "integer"
+                        "type": "string"
                     },
                     "mmsid": {
-                        "description": "mf3d05c159aa49e1951c5301bc6af1bac",
+                        "description": "m84af96809ff8989f3668c93aaaedb69c",
                         "type": "string"
                     },
                     "bytes": {
@@ -1264,7 +1264,7 @@
                         "type": "integer"
                     },
                     "id": {
-                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "description": "a361e5927d2c4d7dcf71a142dc0ec6d9b",
                         "type": "string"
                     },
                     "secret": {
@@ -1289,7 +1289,7 @@
                 "type": "object",
                 "properties": {
                     "id": {
-                        "description": "c361e5927d2c4d7dcf71a142dc0ec6d9b-r0",
+                        "description": "u361e5927d2c4d7dcf71a142dc0ec6d9b",
                         "type": "string"
                     },
                     "mobilenumber": {
@@ -1309,11 +1309,11 @@
                         "type": "string"
                     },
                     "email": {
-                        "description": "martin.thure@gmail.com",
+                        "description": "hello@46elks.com",
                         "type": "string"
                     },
                     "displayname": {
-                        "description": "Martin Harari Thuresson",
+                        "description": "46Elks AB",
                         "type": "string"
                     }
                 }
@@ -1324,3 +1324,4 @@
         }
     }
 }
+
